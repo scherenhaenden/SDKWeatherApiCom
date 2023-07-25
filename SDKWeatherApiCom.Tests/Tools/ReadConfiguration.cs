@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using System;
+using Newtonsoft.Json;
 
 namespace SDKWeatherApiCom.Tests.Tools;
 
@@ -14,27 +15,15 @@ public class ReadConfiguration
 
     public AppConfig GetConfig()
     {
+        
+        return GetAppSettings();
         var environment = GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
         if (environment != null)
         {
-            GetAppSettings(environment, "Key");
+            
         }
         
-        
-        Console.WriteLine("Enviroment->" + environment);
-        var myjson = $"appsettings.{environment}.json";
-        myjson = myjson.Replace("..", ".");
-        Console.WriteLine("JSON file->" + myjson);
-        
-        
-        var builder = new ConfigurationBuilder()
-            
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json");
- 
-        var configuration = builder.Build();
- 
         //return configuration.GetSection("AppSettings").Get<AppConfig>();
         return new AppConfig();
 
@@ -50,20 +39,20 @@ public class ReadConfiguration
     }
     
     // create method that gets appsettings.json file and returns the value
-    public string? GetAppSettings(string environment, string name)
+    public AppConfig? GetAppSettings()
     {
         /*var config = new ConfigurationBuilder()
             .AddJsonFile(myjson, false)
             .Build().GetSection("AppSettings").Get<AppSettings>();*/
+
+        var currentDirectory = Directory.GetCurrentDirectory();
         
-        
-        var builder = new ConfigurationBuilder()
-            
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile($"appsettings.{environment}.json");
- 
-        var configuration = builder.Build();
- 
-        return configuration[name];
+        // read text file
+        var text = File.ReadAllText("appsettings.json");
+        // parse text file to AppSettings
+        return JsonConvert.DeserializeObject<AppConfig>(text);
+
+
+
     }
 }
