@@ -57,7 +57,7 @@ Install-Package SDKWeatherApiCom
 
 ## Requirements
 
-SDKWeatherApiCom is compatible with .NET Core 3.1 and .NET 5.0 and can be used in both ASP.NET and Console applications.
+SDKWeatherApiCom is compatible with .NET Core 7 and can be used in both ASP.NET and Console applications.
 
 ## API Documentation
 
