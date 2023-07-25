@@ -37,27 +37,10 @@ public class WeatherApiRequestModel
     public WeatherApiRequestModel(
         string key,
         QueryRequestModel queryRequestModel
-        ) => (key, queryRequestModel) = (Key, QueryRequestModel);
+        ) => (Key, QueryRequestModel) = (key, queryRequestModel);
     
     public string Key { get; init; }
     
-    public QueryRequestModel QueryRequestModel { get; set; }
-    public bool Aqi { get; set; }
-    public string Unixdt { get; set; }
-    public LanguageCode Language { get; set; }
-    public bool Json { get; set; } = true;
-}
-
-
-public class WeatherApiRequestCurrentModel: WeatherApiRequestModel
-{
-    public WeatherApiRequestCurrentModel(
-        string key,
-        QueryRequestModel queryRequestModel
-    ) : base(key, queryRequestModel) => (key, queryRequestModel) = (Key, QueryRequestModel);
-    
-
-    public string Key { get; init; }
     public QueryRequestModel QueryRequestModel { get; set; }
     public bool Aqi { get; set; }
     public string Unixdt { get; set; }
