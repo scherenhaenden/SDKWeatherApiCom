@@ -31,7 +31,6 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --configuration Release --no-restore
-      - name: Set up MySQL
         uses: mirromutth/mysql-action@v1.1
         with:
           host port: 3800 # Optional, default value is 3306. The port of host
