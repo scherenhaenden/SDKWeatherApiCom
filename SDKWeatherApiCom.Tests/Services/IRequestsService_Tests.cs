@@ -23,18 +23,26 @@ public class IRequestsService_Tests
         var key= _appConfig.Key;
         
         IRequestsService service = new RequestsService("https://api.weatherapi.com/v1");//.GetCurrent("London", true, true);
-
-        //init request model
-        var queryRequestModel = new QueryRequestModel()
+      
+        
+        var currentQueryRequestModel = new CurrentQueryRequestModel()
         {
-            City = "London"
+            Query = "London",
+            AirQualityInformation = true,
+            Key = _appConfig.Key
         };
         
+        /*var requestMofdel = new WeatherApiRequestModel<CurrentQueryRequestModel> (key, currentQueryRequestModel)
+        {
+              QueryRequestModel = currentQueryRequestModel
+        };*/
         
-        var requestModel = new WeatherApiRequestCurrentModel (key, queryRequestModel)
+        
+        var requestModel = new WeatherApiRequestCurrentModel (key, currentQueryRequestModel)
         {
             Json = true,
-            Aqi = true
+            QueryRequestModel = currentQueryRequestModel
+           
         };
 
         var result = await service.GetCurrent(requestModel) ;
@@ -52,16 +60,17 @@ public class IRequestsService_Tests
         IRequestsService service = new RequestsService("https://api.weatherapi.com/v1");//.GetCurrent("London", true, true);
 
         //init request model
-        var queryRequestModel = new QueryRequestModel()
+        var queryRequestModel = new SearchQueryRequestModel()
         {
-            City = "London"
+            Query = "London",
+            AirQualityInformation = true,
+            Key = _appConfig.Key
         };
         
         
-        var requestModel = new WeatherApiRequestCurrentModel (key, queryRequestModel)
+        var requestModel = new WeatherApiRequestSearchModel (key, queryRequestModel)
         {
             Json = true,
-            Aqi = false
         };
 
         var result = await service.Search(requestModel) ;
