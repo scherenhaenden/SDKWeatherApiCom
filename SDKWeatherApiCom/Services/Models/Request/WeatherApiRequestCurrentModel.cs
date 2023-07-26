@@ -3,56 +3,44 @@ using SDKWeatherApiCom.Services.Models.Shared;
 
 namespace SDKWeatherApiCom.Services.Models.Request;
 
-public class WeatherApiRequestCurrentModel: WeatherApiRequestModel
+public class WeatherApiRequestCurrentModel: WeatherApiRequestModel<CurrentQueryRequestModel>
 {
     public WeatherApiRequestCurrentModel(
         string key,
-        QueryRequestModel queryRequestModel
+        CurrentQueryRequestModel queryRequestModel
     ) : base(key, queryRequestModel) => (Key, QueryRequestModel) = (key, queryRequestModel);
-    
 
-    public string Key { get; init; }
-    public QueryRequestModel QueryRequestModel { get; set; }
-    public bool Aqi { get; set; }
-    public string Unixdt { get; set; }
-    public LanguageCode Language { get; set; }
+    public new CurrentQueryRequestModel QueryRequestModel { get; set; }
     public bool Json { get; set; } = true;
 }
 
 
-public class WeatherApiRequestSearchModel: WeatherApiRequestModel
+public class WeatherApiRequestSearchModel: WeatherApiRequestModel<SearchQueryRequestModel>
 {
     public WeatherApiRequestSearchModel(
         string key,
-        QueryRequestModel queryRequestModel
+        SearchQueryRequestModel queryRequestModel
     ) : base(key, queryRequestModel) => (Key, QueryRequestModel) = (key, queryRequestModel);
-    
 
-    public string Key { get; init; }
-    public QueryRequestModel QueryRequestModel { get; set; }
-    public bool Aqi { get; set; }
-    public string Unixdt { get; set; }
-    public LanguageCode Language { get; set; }
+    public new SearchQueryRequestModel QueryRequestModel { get; set; }
+    
     public bool Json { get; set; } = true;
 }
 
 
-public class WeatherApiRequestForecastModel: WeatherApiRequestModel
+public class WeatherApiRequestForecastModel: WeatherApiRequestModel<ForecastQueryRequestModel>
 {
     public WeatherApiRequestForecastModel(
         string key,
-        QueryRequestModel queryRequestModel
+        ForecastQueryRequestModel queryRequestModel
     ) : base(key, queryRequestModel) => (Key, QueryRequestModel) = (key, queryRequestModel);
     
-    
-    
-
-    public string Key { get; init; }
-    public QueryRequestModel QueryRequestModel { get; set; }
+    public new ForecastQueryRequestModel QueryRequestModel { get; set; }
     public bool Aqi { get; set; }
     public string Unixdt { get; set; }
     public LanguageCode Language { get; set; }
     public bool Json { get; set; } = true;
+    public int Days { get; set; }
 }
 
 public class WeatherApiRequestSearchForecastModel

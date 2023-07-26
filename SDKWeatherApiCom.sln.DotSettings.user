@@ -1,4 +1,7 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=dedbcfc7_002Dcc17_002D4aba_002Da2ee_002Ddd9d1e96817f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;SDKWeatherApiCom.Tests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;Project Location="/Users/edwardflores/Projects/Development/Learning/Avalonia/SDKWeatherApiCom/SDKWeatherApiCom.Tests" Presentation="&amp;lt;SDKWeatherApiCom.Tests&amp;gt;" /&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=eadfa388_002D688a_002D4ebf_002Db3fd_002Dfdd43130004d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1_Current" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::F1264E14-F81E-4C04-A80F-AC590D72B6B3::net7.0::SDKWeatherApiCom.Tests.Services.IRequestsService_Tests.Test1_Current&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::F1264E14-F81E-4C04-A80F-AC590D72B6B3::net7.0::SDKWeatherApiCom.Tests.Services.IRequestsService_Tests.Test2_Search&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
